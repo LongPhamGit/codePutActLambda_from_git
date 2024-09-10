@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - zip -r function.zip .
+      - echo Packaging complete.
+
+artifacts:
+  files:
+    - function.zip
+
+post_build:
+  commands:
+    - echo Deploying to AWS Lambda...
+    - aws lambda update-function-code --function-name <PutActivationFromGit> --zip-file fileb://function.zip
