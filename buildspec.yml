@@ -18,4 +18,4 @@ artifacts:
 post_build:
   commands:
     - echo Deploying to AWS Lambda...
-    - aws lambda update-function-code --function-name <PutActivationFromGit> --zip-file fileb://function.zip
+    - aws lambda update-function-code --function-name PutActivationFromGit --zip-file fileb://function.zip
