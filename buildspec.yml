@@ -1,11 +1,9 @@
 version: 0.2
 phases:
-  install:
-    runtime-versions:
-      python: 3.8
+    install:
     commands:
-      - echo "Installing dependencies..."
-      - pip install -r requirements.txt -t lib
+      - echo Installing dependencies...
+      - npm install
   build:
     commands:
       - echo "Zipping deployment package..."
